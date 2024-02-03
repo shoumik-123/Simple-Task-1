@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Chilanka&family=Nunito+Sans:ital,opsz,wght@1,6..12,400;1,6..12,700;1,6..12,800&family=Roboto:ital,wght@0,100;0,700;1,100;1,400&family=Rubik+Scribble&display=swap');
+
+@import "./assets/css/register.css";
+@import "./assets/css/update.css";
+@import "./assets/css/loader.css";
+
+*{
+  margin: 0;
+  padding: 0;
+  color: black;
+  font-family: 'Chilanka', cursive ,'Nunito Sans', sans-serif;
+  scroll-behavior: smooth;
+}
+
+
