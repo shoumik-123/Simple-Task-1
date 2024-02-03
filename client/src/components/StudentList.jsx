@@ -116,7 +116,7 @@ const StudentList = () => {
     else {
         return (
             <div>
-                <h1>No Student here</h1>
+                <h1 className="noStudent">No Student here</h1>
             </div>
         )
     }

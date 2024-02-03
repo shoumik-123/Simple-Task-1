@@ -12,4 +12,12 @@
   scroll-behavior: smooth;
 }
 
+.noStudent{
+  font: 700 40px "Roboto";
+  text-shadow: 2px 2px 2px #702323;
+  position: fixed;
+  top: 40%;
+  left: 40%;
+}
+
 

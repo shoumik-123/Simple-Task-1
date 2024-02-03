@@ -49,7 +49,7 @@ module.exports.Create = async function (req, res) {
 // }
 
 //Read
-module.exports.Read = async function (req, res) {
+module.exports.ReadData = async function (req, res) {
     try {
         let result = await Model.find();
 
