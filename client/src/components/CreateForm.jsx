@@ -31,9 +31,30 @@ const LoginRegistration = () => {
         e.preventDefault();
 
         try {
-            if (IsEmpty(name) ||!IsEmail(email) || IsEmpty(img) ||!IsMobile(number ) || IsEmpty(id) || IsEmpty(dept)){
-                toast.error("Wrong information")
+            if (IsEmpty(name)){
+                toast.error("Name Required")
             }
+            if (IsEmpty(email)){
+                toast.error("Email Required")
+            }
+            if (IsEmpty(img)){
+                toast.error("Photo Required")
+            }
+            if (IsEmpty(number)){
+                toast.error("Phone Number Required")
+            }
+            if (IsEmpty(id)){
+                toast.error("Id Required")
+            }
+            if (IsEmpty(dept)){
+                toast.error("Department Name Required")
+            }
+            // if (!IsEmail()){
+            //     toast.error("Email is not valid")
+            // }
+            // if (!IsMobile()){
+            //     toast.error("Mobile Number is not valid")
+            // }
             else {
                 const data  =  await Create(name, email, img, number, id, dept)
                 if (data){
@@ -51,7 +72,7 @@ const LoginRegistration = () => {
             <div className="formPage">
                 <div className="formbox ">
 
-                    <h1 className="bg-dark text-center text-secondary">Create Student List</h1>
+                    <h1 className="text-center">Create Student List</h1>
                     <div className=" row">
                         <div className="col-md-12">
                             <label>Name</label>
@@ -87,7 +108,7 @@ const LoginRegistration = () => {
                         <div className="col-md-12">
                             <label>Phone No:</label>
                             <input
-                                type="number"
+                                type="tel"
                                 name="number"
                                 className="form-control"
                                 placeholder="Enter your number..."
@@ -120,68 +141,12 @@ const LoginRegistration = () => {
                     </div>
                     <button
                         onClick={SaveData}
-                        className="btn btn-primary mt-4 w-100"
-                    >Save
+                        className="bttn mt-4 w-100"
+                    >Register
                     </button>
 
                 </div>
             </div>
-            {/*<div className="LoginSignUpContainer">*/}
-            {/*    <div className="LoginSignUpBox">*/}
-
-
-            {/*        <form*/}
-            {/*            className="signUpForm"*/}
-            {/*            encType="multipart/form-data"*/}
-            {/*            onSubmit={registerSubmit}*/}
-            {/*        >*/}
-            {/*            <div className="signUpName">*/}
-            {/*                <FaceIcon/>*/}
-            {/*                <input*/}
-            {/*                    type="text"*/}
-            {/*                    placeholder="Name"*/}
-            {/*                    required*/}
-            {/*                    name="name"*/}
-            {/*                    value={name}*/}
-            {/*                    onChange={registerDataChange}*/}
-            {/*                />*/}
-            {/*            </div>*/}
-            {/*            <div className="signUpEmail">*/}
-            {/*                <MailOutlineIcon/>*/}
-            {/*                <input*/}
-            {/*                    type="email"*/}
-            {/*                    placeholder="Email"*/}
-            {/*                    required*/}
-            {/*                    name="email"*/}
-            {/*                    value={email}*/}
-            {/*                    onChange={registerDataChange}*/}
-            {/*                />*/}
-            {/*            </div>*/}
-            {/*            <div className="signUpPassword">*/}
-            {/*                <LockOpenIcon/>*/}
-            {/*                <input*/}
-            {/*                    type="password"*/}
-            {/*                    placeholder="Password"*/}
-            {/*                    required*/}
-            {/*                    name="password"*/}
-            {/*                    value={password}*/}
-            {/*                    onChange={registerDataChange}*/}
-            {/*                />*/}
-            {/*            </div>*/}
-
-            {/*            <div id="registerImage">*/}
-            {/*                <img src={avatar} alt="Avatar Preview"/>*/}
-            {/*                <input*/}
-            {/*                    type="file"*/}
-            {/*                    name="avatar"*/}
-            {/*                    accept="image/*"*/}
-            {/*                    onChange={setAvatar}*/}
-            {/*                />*/}
-            {/*            </div>*/}
-            {/*            <input type="submit" value="Register" className="signUpBtn"/>*/}
-            {/*        </form>*/}
-            {/*    </div>*/}
-            {/*</div>*/}
         </Fragment>
     );
 };

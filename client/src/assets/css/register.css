@@ -17,17 +17,19 @@
     height: 85vh;
     box-sizing: border-box;
     overflow: hidden;
-    box-shadow: 5px 5px 8px 10px rgba(0, 0, 0, 0.56);
-    animation: shake 0.5s ease-in-out;
+    box-shadow: 5px 5px 8px 10px #702323;
     padding: 10px;
 }
 
 .formbox >h1 {
-    font: 500 20px "Roboto";
+    font: 700 26px "Roboto";
     padding: 20px;
     transition: all 0.5s;
     place-items: center;
-    width: 100%;
+    margin: 5px auto;
+    width: 70%;
+    color: #702323;
+    border-bottom: #702323 1px solid;
 }
 .formbox >div>div {
     padding: 5px 15px;
@@ -46,14 +48,13 @@
     padding:16px 20px ;
     width: 100%;
     box-sizing: border-box;
-    border: 1px solid rgba(0, 0, 0, 0.267);
+    border: 1px solid #702323;
     border-radius: 4px;
     font: 300 16px cursive;
     outline: none;
 }
 
-
-#registerImage > input::file-selector-button {
+.bttn{
     cursor: pointer;
     width: 100%;
     z-index: 2;
@@ -63,10 +64,12 @@
     font: 400 0.8vmax cursive;
     transition: all 0.5s;
     padding: 0 1vmax;
+    background: #702323;
+    color: white;
 }
 
-#registerImage > input::file-selector-button:hover {
-    background-color: rgba(235, 235, 235, 0.91);
+.tableHeader{
+    background: #702323!important;
 }
 
 

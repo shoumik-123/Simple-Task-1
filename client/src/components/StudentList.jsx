@@ -62,6 +62,9 @@ const StudentList = () => {
         navigate('/update/'+_id)
     };
 
+    const goToRegister = () => {
+        navigate("/create")
+    };
     if(DataList.length>0){
         return (
             <div>
@@ -69,15 +72,15 @@ const StudentList = () => {
                     <table className="table text-secondary table-bordered">
                         <thead>
                         <tr>
-                            <th className="p-3">No</th>
-                            <th className="p-3">Image</th>
-                            <th className="p-3">Name</th>
-                            <th className="p-3">Email</th>
-                            <th className="p-3">Phone No</th>
-                            <th className="p-3">Student ID</th>
-                            <th className="p-3">Dept</th>
-                            <th className="p-3">Update</th>
-                            <th className="p-3">Delete</th>
+                            <th className="p-3 tableHeader">No</th>
+                            <th className="p-3 tableHeader">Image</th>
+                            <th className="p-3 tableHeader">Name</th>
+                            <th className="p-3 tableHeader">Email</th>
+                            <th className="p-3 tableHeader">Phone No</th>
+                            <th className="p-3 tableHeader">Student ID</th>
+                            <th className="p-3 tableHeader">Dept</th>
+                            <th className="p-3 tableHeader">Update</th>
+                            <th className="p-3 tableHeader">Delete</th>
                         </tr>
                         </thead>
 
@@ -95,7 +98,7 @@ const StudentList = () => {
                                     <td className="p-3">{item.dept}</td>
                                     <td className="py-2">
                                         <button onClick={UpdateItem.bind(this, item._id)}
-                                                className="btn btn-dark mx-2">Update
+                                                className="btn btn-info mx-2">Update
                                         </button>
                                     </td>
                                     <td className="py-2">
@@ -115,8 +118,9 @@ const StudentList = () => {
     }
     else {
         return (
-            <div>
-                <h1 className="noStudent">No Student here</h1>
+            <div className="noStudent">
+                <h1>There are no students there at the moment</h1>
+                <button onClick={goToRegister}>Registration</button>
             </div>
         )
     }

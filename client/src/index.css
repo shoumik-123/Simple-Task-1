@@ -17,7 +17,17 @@
   text-shadow: 2px 2px 2px #702323;
   position: fixed;
   top: 40%;
-  left: 40%;
+  left: 30%;
+}
+
+.noStudent >  button{
+  background: #702323;
+  color: #ffffff;
+  padding: 15px;
+  box-shadow: black 2px 2px 2px 2px;
+  border: none;
+  position: absolute;
+  left: 30%;
 }
 
 

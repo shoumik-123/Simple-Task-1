@@ -7,13 +7,18 @@ const Model = require('../models/Model');
 module.exports.Create = async function (req, res) {
     try {
         let reqBody = req.body;
-        let user = await Model.create(reqBody);
-
-        if (user) {
+        let userExist =await Model.aggregate([
+                {$match:reqBody },
+                {$project:{_id:0,email:1}}
+            ]
+        )
+        if (!userExist){
+            let user = await Model.create(reqBody);
             res.status(201).json({ status: "success", data: user });
-        } else {
-            res.status(400).json({ status: "fail" });
         }
+
+        res.status(400).json({ status: "fail",message:"User Already Exist" });
+
     } catch (err) {
         console.error(err);
         res.status(400).json({ status: "fail", data: err.message });
@@ -90,7 +95,7 @@ module.exports.Update =async function (req, res){
         let Query = {_id:id}
         let reqBody = req.body;
 
-        const data = await     Model.updateOne(Query,reqBody)
+        const data = await Model.updateOne(Query,reqBody)
 
         if (data){
             res.status(200).json({status: "Updated", data: data})

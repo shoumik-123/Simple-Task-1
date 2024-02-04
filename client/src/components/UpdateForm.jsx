@@ -60,6 +60,7 @@ const UpdateForm = () => {
             const result = await Update(name, img, number, ID, dept,id)
             if (result){
                 navigate('/list')
+                window.location.reload()
                 toast.success('Update successful')
             }
         }
@@ -89,7 +90,7 @@ const UpdateForm = () => {
                 </div>
                 <div className="updateFormbox ">
 
-                    <h1 className="bg-dark text-center text-secondary">Edit Student details</h1>
+                    <h1 className=" text-center">Edit Student details</h1>
                     <div className="col-md-12">
                         <label>Name</label>
                         <input
@@ -101,7 +102,7 @@ const UpdateForm = () => {
                                 required
                             />
                         </div>
-                        <div className="col-md-12">
+                        <div className="col-md-12 my-4">
                             <label>Email</label>
                             <input
                                 type="email"
@@ -124,7 +125,7 @@ const UpdateForm = () => {
                                 required
                             />
                         </div>
-                        <div className="col-md-12">
+                        <div className="col-md-12 my-4">
                             <label>ID</label>
                             <input
                                 type="text"
@@ -148,8 +149,8 @@ const UpdateForm = () => {
                         </div>
                     <button
                         onClick={SaveData}
-                        className="btn btn-primary mt-4 w-100"
-                    >Save
+                        className="bttn  mt-5 w-100"
+                    >Update
                     </button>
 
                 </div>
