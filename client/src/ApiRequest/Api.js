@@ -2,7 +2,7 @@ import axios from "axios";
 import store from "../redux/store/store.js";
 import {HideLoader, ShowLoader} from "../redux/slice/settingsSlice.js";
 // import {setToken} from "../helper/SessionHelper.js";
-const BaseURI = "https://simple-task-1.vercel.app/";
+const BaseURI = "https://simple-task-1.vercel.app";
 // const BaseURI = "http://localhost:8005/api/v1";
 
 export async function Create(name, email, img, number, id, dept) {
