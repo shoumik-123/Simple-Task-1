@@ -1,6 +1,6 @@
 import {useEffect, useState} from "react";
 import {useNavigate} from "react-router";
-import {Delete, Read} from "../ApiRequest/Api.js";
+import {deleteStudent, getStudentList} from "../ApiRequest/Api.js";
 import {toast} from "react-toastify";
 import store from "../redux/store/store.js";
 import {HideLoader, ShowLoader} from "../redux/slice/settingsSlice.js";
@@ -19,7 +19,7 @@ const StudentList = () => {
         const fetchData = async () => {
             try {
                 console.log('Fetching data...');
-                const result = await Read();
+                const result = await getStudentList();
                 console.log('Data fetched:', result);
                 SetDataList(result);
             } catch (error) {
@@ -46,7 +46,7 @@ const StudentList = () => {
     const DeleteItem = async (_id) => {
         store.dispatch(ShowLoader());
         try {
-            await Delete(_id);
+            await deleteStudent(_id);
             SetDataList((prevData) => prevData.filter((item) => item._id !== _id));
             store.dispatch(HideLoader());
             toast.success("Deleted");

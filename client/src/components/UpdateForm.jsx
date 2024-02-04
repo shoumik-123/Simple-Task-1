@@ -1,7 +1,6 @@
 import { Fragment, useEffect, useState } from 'react';
 import {useNavigate, useParams} from 'react-router';
-import {ReadByID, Update} from '../ApiRequest/Api.js';
-import { getUserDetails, setUserDetails } from '../helper/SessionHelper.js';
+import {getStudentById, updateStudent} from '../ApiRequest/Api.js';
 import { toast } from 'react-toastify';
 
 const UpdateForm = () => {
@@ -22,7 +21,7 @@ const UpdateForm = () => {
                     return;
                 }
 
-                const result = await ReadByID(id);
+                const result = await getStudentById(id);
 
                 if (!result) {
                     toast.error('Failed to fetch data for the given ID.');
@@ -57,12 +56,14 @@ const UpdateForm = () => {
     const SaveData = async (e) => {
         e.preventDefault()
         try {
-            const result = await Update(name, img, number, ID, dept,id)
+            const result = await updateStudent(name, img, number, ID, dept,id)
             if (result){
                 navigate('/list')
-                window.location.reload()
                 toast.success('Update successful')
+
             }
+            window.location.reload()
+
         }
         catch (e) {
             console.log(e)

@@ -1,8 +1,8 @@
 import { Fragment, useState } from 'react';
 import png from "../assets/img/profile.png"
-import {IsEmail, IsEmpty, IsMobile} from "../helper/FormHelper.js";
+import { IsEmpty} from "../helper/FormHelper.js";
 import {toast} from "react-toastify";
-import {Create} from "../ApiRequest/Api.js";
+import { createStudent} from "../ApiRequest/Api.js";
 import {useNavigate} from "react-router";
 
 const LoginRegistration = () => {
@@ -56,7 +56,7 @@ const LoginRegistration = () => {
             //     toast.error("Mobile Number is not valid")
             // }
             else {
-                const data  =  await Create(name, email, img, number, id, dept)
+                const data  =  await createStudent(name, email, img, number, id, dept)
                 if (data){
                     navigate('/list')
                     toast.success("Success")
