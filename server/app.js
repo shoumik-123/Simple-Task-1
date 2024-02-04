@@ -16,7 +16,7 @@ const cors = require('cors');
 // Security middleware Implement
 app.use(cors(
     {
-        origin:["https://simple-task-1-2b5n-ajrhp55es-shoumik-123.vercel.app/create"],
+        origin:["https://simple-task-1-2b5n.vercel.app/create"],
         methods:["POST"  ,  "GET"],
         credentials:true
     }
